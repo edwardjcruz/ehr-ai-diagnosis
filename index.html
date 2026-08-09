@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b3d3b" />
+    <title>Harbor Health — Your health, in one place</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="Harbor Health home"><span class="brand-mark">h</span><span>harbor</span></a>
+        <nav aria-label="Main navigation">
+          <a class="nav-link active" href="#overview" data-view="overview"><span>⌂</span>Overview</a>
+          <a class="nav-link" href="#records" data-view="records"><span>▤</span>Health records</a>
+          <a class="nav-link" href="#connections" data-view="connections"><span>⌁</span>Connections</a>
+          <a class="nav-link" href="#insights" data-view="insights"><span>✦</span>AI insights <i>Beta</i></a>
+        </nav>
+        <div class="sidebar-bottom">
+          <a class="nav-link" href="#help"><span>?</span>Help center</a>
+          <button class="profile" type="button"><span class="avatar">AM</span><span><strong>Alex Morgan</strong><small>Patient account</small></span><b>⌄</b></button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="menu-button" aria-label="Open menu">☰</button>
+          <div class="secure-note"><span class="lock">⌑</span> Your data is encrypted and private</div>
+          <button class="bell" aria-label="Notifications">♧<span></span></button>
+        </header>
+
+        <section id="overview" class="view active-view">
+          <div class="hero-row">
+            <div><p class="eyebrow">SUNDAY, AUGUST 2</p><h1>Good afternoon, Alex.</h1><p class="subhead">Here’s a clear view of your health today.</p></div>
+            <button class="primary" id="connect-provider">Connect a provider <span>→</span></button>
+          </div>
+
+          <div class="attention-card">
+            <div class="attention-icon">✦</div>
+            <div><p class="eyebrow">NEW INSIGHT</p><h2>Your recent lab results are ready to review.</h2><p>We found 2 things worth discussing with your care team.</p></div>
+            <button class="text-button" data-view-target="insights">View insights →</button>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card"><div class="stat-label"><span class="icon lavender">♡</span>Blood pressure</div><strong>118<span>/76</span></strong><p><span class="up">↓ 4%</span> from your last reading</p><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="stat-card"><div class="stat-label"><span class="icon peach">◌</span>Heart rate</div><strong>72 <span>bpm</span></strong><p><span class="steady">—</span> Within your usual range</p><div class="spark orange"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="stat-card"><div class="stat-label"><span class="icon yellow">☼</span>Next appointment</div><strong class="appointment">Aug 14</strong><p>Annual wellness visit · 10:30 AM</p><button class="link-button">View details →</button></article>
+          </div>
+
+          <div class="content-grid">
+            <section class="panel timeline-panel"><div class="panel-title"><div><p class="eyebrow">HEALTH TIMELINE</p><h2>Recent activity</h2></div><button class="link-button" data-view-target="records">View all →</button></div>
+              <div class="timeline">
+                <article><span class="timeline-dot teal">⌁</span><div><b>Lab results received</b><p>Comprehensive metabolic panel · <span class="tag">2 results to review</span></p></div><time>Today</time></article>
+                <article><span class="timeline-dot blue">▤</span><div><b>Visit summary added</b><p>Dr. Sarah Chen · Primary care</p></div><time>Jul 28</time></article>
+                <article><span class="timeline-dot purple">♡</span><div><b>Vitals recorded</b><p>Blood pressure, heart rate & weight</p></div><time>Jul 28</time></article>
+              </div>
+            </section>
+            <section class="panel providers-panel"><div class="panel-title"><div><p class="eyebrow">YOUR CARE TEAM</p><h2>Connected providers</h2></div><button class="link-button" data-view-target="connections">Manage →</button></div>
+              <div class="provider"><span class="provider-logo green">MC</span><div><b>Maple Clinic</b><p>Primary care · Synced today</p></div><span class="check">✓</span></div>
+              <div class="provider"><span class="provider-logo navy">AH</span><div><b>Allied Health</b><p>Cardiology · Synced Jul 30</p></div><span class="check">✓</span></div>
+              <button class="add-provider" id="add-provider"><span>+</span> Add another provider</button>
+            </section>
+          </div>
+        </section>
+
+        <section id="records" class="view">
+          <div class="page-heading"><div><p class="eyebrow">YOUR RECORDS</p><h1>Health records</h1><p class="subhead">A unified, read-only view of records you chose to share.</p></div><button class="primary" id="records-connect">Connect a provider <span>→</span></button></div>
+          <div class="record-tabs"><button class="selected">All records</button><button>Labs</button><button>Visits</button><button>Medications</button><button>Documents</button></div>
+          <section class="panel record-list"><div class="record-row"><span class="record-icon teal">⌁</span><div><b>Comprehensive metabolic panel</b><p>Maple Clinic · Aug 2, 2026</p></div><span class="tag">New</span><button>View →</button></div><div class="record-row"><span class="record-icon blue">▤</span><div><b>Annual physical visit summary</b><p>Maple Clinic · Jul 28, 2026</p></div><button>View →</button></div><div class="record-row"><span class="record-icon purple">◈</span><div><b>Cardiology follow-up note</b><p>Allied Health · Jul 12, 2026</p></div><button>View →</button></div></section>
+        </section>
+
+        <section id="connections" class="view">
+          <div class="page-heading"><div><p class="eyebrow">DATA CONNECTIONS</p><h1>Your providers</h1><p class="subhead">You control which organizations can share records with Harbor.</p></div><button class="primary" id="connections-connect">Connect a provider <span>→</span></button></div>
+          <section class="panel permission-panel"><span class="shield">⌑</span><div><h2>Privacy, by default</h2><p>Connections are read-only. You can revoke access at any time, and we never sell your health information.</p></div><button class="link-button">Learn more →</button></section>
+          <section class="panel connection-list"><div class="connection"><span class="provider-logo green">MC</span><div><b>Maple Clinic</b><p>Primary care · Connected Aug 1, 2026</p></div><span class="connected">● Connected</span><button class="more">•••</button></div><div class="connection"><span class="provider-logo navy">AH</span><div><b>Allied Health</b><p>Cardiology · Connected Jul 30, 2026</p></div><span class="connected">● Connected</span><button class="more">•••</button></div></section>
+        </section>
+
+        <section id="insights" class="view">
+          <div class="page-heading"><div><p class="eyebrow">AI INSIGHTS · BETA</p><h1>Make sense of your records</h1><p class="subhead">Plain-language context based only on your connected health data.</p></div></div>
+          <div class="ai-notice"><span>✦</span><p>Harbor AI helps you prepare for conversations with your clinician. It does not diagnose, treat, or replace professional medical advice.</p></div>
+          <div class="insight-grid"><article class="insight-card featured"><p class="eyebrow">LAB REVIEW · TODAY</p><h2>Two lab values are outside the reference range.</h2><p>Your results show a mildly elevated LDL cholesterol and an ALT level above range. These results can have many causes and are worth reviewing with your care team.</p><button class="primary small">Explore results →</button></article><article class="insight-card"><span class="record-icon yellow">☼</span><p class="eyebrow">PREPARE FOR YOUR VISIT</p><h2>Questions to bring on Aug 14</h2><p>We prepared a short list based on recent labs and your visit history.</p><button class="link-button">View questions →</button></article></div>
+          <section class="ask-card"><div><span class="ask-star">✦</span><h2>Ask about your records</h2><p>Try: “What changed in my latest lab results?”</p></div><div class="ask-input"><input aria-label="Ask about your records" placeholder="Ask a question about your records…" /><button aria-label="Send question">↑</button></div></section>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="connect-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close">×</button><p class="eyebrow">SECURE CONNECTION</p><h2>Connect your provider</h2><p class="dialog-copy">Search for your health system to securely import a copy of your records. You’ll be redirected to your provider to sign in and approve access.</p><label for="provider-search">Provider or health system</label><div class="search"><span>⌕</span><input id="provider-search" placeholder="Search providers" autocomplete="off" /></div><div class="provider-options"><button type="button" class="provider-choice"><span class="provider-logo green">MC</span><span><b>Maple Clinic</b><small>Primary care · Available to connect</small></span><em>→</em></button><button type="button" class="provider-choice"><span class="provider-logo navy">AH</span><span><b>Allied Health</b><small>Cardiology · Available to connect</small></span><em>→</em></button></div><p class="consent">⌑ You’ll review exactly what is shared before connecting.</p></form></dialog>
+    <div class="toast" role="status">Connection flow ready — provider sign-in would open in a secure window.</div>
+    <script src="app.js"></script>
+  </body>
+</html>
